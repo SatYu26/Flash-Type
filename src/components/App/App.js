@@ -6,6 +6,7 @@ import Footer from "../Footer/Footer";
 import ChallengeSection from "../ChallengeSection/ChallengeSection";
 
 const TotalTime = 60;
+const serviceUrl = "http://metaphorpsum.com/paragraphs/1/8";
 const DefaultState = {
   selectedParagraph: "Hello World!",
   testInfo: [],
@@ -19,6 +20,9 @@ const DefaultState = {
 class App extends Component {
   state = DefaultState;
   render() {
+    // fetch(serviceUrl)
+    //   .then((response) => response.text())
+    //   .then((information) => {});
     return (
       <div className="app">
         <Nav />
