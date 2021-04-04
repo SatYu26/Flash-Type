@@ -1,12 +1,13 @@
 import React from "react";
 import "./TryAgain.css";
 
-const TryAgain = ({ words, characters, wpm }) => {
+const TryAgain = ({ words, characters, wpm, startAgain }) => {
   const url = "satyamgoyal.codes";
   return (
-    <div className="try-again-container">
+    <div data-aos="fade-up" className="try-again-container">
       <h1>Test Results</h1>
-      <div className="results-container">
+
+      <div className="result-container">
         <p>
           <b>Characters:</b> {characters}
         </p>
@@ -14,20 +15,26 @@ const TryAgain = ({ words, characters, wpm }) => {
           <b>Words:</b> {words}
         </p>
         <p>
-          <b>Speed:</b> {wpm} wpm
+          <b>Speed</b> {wpm} wpm
         </p>
       </div>
+
       <div>
-        <button className="end-buttons start-again-btn">Re-try</button>
         <button
-          className="end-buttons share-btn"
-          onClick={() => {
+          onClick={() => startAgain()}
+          className="end-buttons start-again-btn"
+        >
+          Re-try
+        </button>
+        <button
+          onClick={() =>
             window.open(
               "https://www.facebook.com/sharer/sharer.php?u=" + url,
               "facebook-share-dialog",
               "width=800,height=600"
-            );
-          }}
+            )
+          }
+          className="end-buttons share-btn"
         >
           Share
         </button>

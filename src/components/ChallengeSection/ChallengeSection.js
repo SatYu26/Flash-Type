@@ -4,13 +4,14 @@ import "./ChallengeSection.css";
 
 const ChallengeSection = ({
   selectedParagraph,
+  testInfo,
+  onInputChange,
   words,
   characters,
   wpm,
   timeRemaining,
   timerStarted,
-  testInfo,
-  onInputChange,
+  startAgain,
 }) => {
   return (
     <div className="challenge-section-container">
@@ -18,14 +19,15 @@ const ChallengeSection = ({
         Take a Speed Test Now!
       </h1>
       <TestContainer
+        testInfo={testInfo}
         selectedParagraph={selectedParagraph}
-        timerStarted={timerStarted}
-        timeRemaining={timeRemaining}
+        onInputChange={onInputChange}
         words={words}
         characters={characters}
         wpm={wpm}
-        testInfo={testInfo}
-        onInputChange={onInputChange}
+        timeRemaining={timeRemaining}
+        timerStarted={timerStarted}
+        startAgain={startAgain}
       />
     </div>
   );

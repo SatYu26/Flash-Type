@@ -1,6 +1,6 @@
 import React from "react";
-import logo from "./../../assets/logo.png";
 import "./Nav.css";
+import logo from "./../../assets/logo.png";
 
 const Nav = () => {
   return (
@@ -12,8 +12,8 @@ const Nav = () => {
       <div className="nav-right">
         <a
           target="_blank"
-          className="nav-name-link"
-          href="https://satyamgoyal.codes"
+          className="nav-aam-link"
+          href="https://github.com/SatYu26"
           rel="noreferrer"
         >
           SatYu
