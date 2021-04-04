@@ -37,8 +37,26 @@ class App extends Component {
     this.setState({ testInfo: testInfo });
   }
 
+  startTimer = () => {
+    this.setState({
+      timerStarted: true,
+    });
+    const timer = setInterval(() => {
+      if (this.state.timeRemaining > 0) {
+        this.setState({
+          timeRemaining: this.state.timeRemaining - 1,
+        });
+      } else {
+        clearInterval(timer);
+      }
+    }, 1000);
+  };
+
   handleUserInput = (inputValue) => {
-    console.log(inputValue);
+    // console.log(inputValue);
+    if (this.state.timerStarted === false) {
+      this.startTimer();
+    }
   };
 
   render() {
