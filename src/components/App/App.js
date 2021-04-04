@@ -36,6 +36,11 @@ class App extends Component {
     });
     this.setState({ testInfo: testInfo });
   }
+
+  handleUserInput = (inputValue) => {
+    console.log(inputValue);
+  };
+
   render() {
     return (
       <div className="app">
@@ -49,6 +54,7 @@ class App extends Component {
           timeRemaining={this.state.timeRemaining}
           timerStarted={this.state.timerStarted}
           testInfo={this.state.testInfo}
+          onInputChange={this.handleUserInput}
         />
         <Footer />
       </div>
