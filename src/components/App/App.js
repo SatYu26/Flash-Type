@@ -26,6 +26,15 @@ class App extends Component {
     //   .then((data) => {
     //     this.setState({ selectedParagraph: data });
     //   });
+
+    const selectedParagraphArray = this.state.selectedParagraph.split("");
+    const testInfo = selectedParagraphArray.map((selectedLetter) => {
+      return {
+        testLetter: selectedLetter,
+        status: "notAttempted",
+      };
+    });
+    this.setState({ testInfo: testInfo });
   }
   render() {
     return (
@@ -39,6 +48,7 @@ class App extends Component {
           wpm={this.state.wpm}
           timeRemaining={this.state.timeRemaining}
           timerStarted={this.state.timerStarted}
+          testInfo={this.state.testInfo}
         />
         <Footer />
       </div>
