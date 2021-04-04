@@ -19,10 +19,15 @@ const DefaultState = {
 
 class App extends Component {
   state = DefaultState;
-  render() {
+
+  componentDidMount() {
     // fetch(serviceUrl)
     //   .then((response) => response.text())
-    //   .then((information) => {});
+    //   .then((data) => {
+    //     this.setState({ selectedParagraph: data });
+    //   });
+  }
+  render() {
     return (
       <div className="app">
         <Nav />
